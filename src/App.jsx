@@ -6,9 +6,17 @@ import Dyna from "./Components/Dyna/Dyna";
 import Search from "./Components/Search/Search";
 import Home from "./Components/Home/Home";
 
-import { createBrowserRouter, RouterProvider } from "react-router";
-console.log(import.meta.env.BASE_URL);
-const BASE = "/vite-react-test";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  HashRouter,
+  Route,
+  Routes,
+  Link,
+} from "react-router";
+//const BASE = "/vite-react-test";
+const BASE = "";
+/*
 const router = createBrowserRouter([
   {
     path: BASE,
@@ -17,6 +25,7 @@ const router = createBrowserRouter([
   { path: `${BASE}/search`, element: <Search /> },
   { path: `${BASE}/dyna/:id`, element: <Dyna /> },
 ]);
+*/
 
 // {function App() {
 //   const [count, setCount] = useState(0)
@@ -133,11 +142,38 @@ const router = createBrowserRouter([
 //   )
 // }}
 
+/*
 function App() {
   return (
     <div className="App">
       <RouterProvider router={router} />
     </div>
+  );
+}
+  */
+
+function App() {
+  return (
+    <HashRouter basename={BASE}>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/search">Search</Link>
+          </li>
+          <li>
+            <Link to="/dyna/8">Dyna</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/dyna/:id" element={<Dyna />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
