@@ -10,17 +10,15 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 console.log(import.meta.env.BASE_URL);
 console.log(import.meta.env.PROD);
 console.log(import.meta.env.DEV);
-console.log(import.meta.env.VITE_IN_PROD);
-console.log(import.meta.env.VITE_IN_DEV);
-console.log(import.meta.env.VITE_WA);
-const GITHUB_REPO = "vite-react-test/";
+const BASE = import.meta.env.PROD ? "/vite-react-test" : "";
+console.log(BASE);
 const router = createBrowserRouter([
   {
-    path: GITHUB_REPO,
+    path: BASE,
     element: <Home />,
   },
-  { path: "/search", element: <Search /> },
-  { path: "/dyna/:id", element: <Dyna /> },
+  { path: `${BASE}/search`, element: <Search /> },
+  { path: `${BASE}/dyna/:id`, element: <Dyna /> },
 ]);
 
 // {function App() {
