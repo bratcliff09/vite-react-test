@@ -7,10 +7,11 @@ import Search from "./Components/Search/Search";
 import Home from "./Components/Home/Home";
 
 import { createBrowserRouter, RouterProvider } from "react-router";
-
+console.log(import.meta.env.BASE_URL);
+const GITHUB_REPO = "vite-react-test/";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: GITHUB_REPO,
     element: <Home />,
   },
   { path: "/search", element: <Search /> },
