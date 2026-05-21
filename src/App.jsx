@@ -8,6 +8,11 @@ import Home from "./Components/Home/Home";
 
 import { createBrowserRouter, RouterProvider } from "react-router";
 console.log(import.meta.env.BASE_URL);
+console.log(import.meta.env.PROD);
+console.log(import.meta.env.DEV);
+console.log(import.meta.env.VITE_IN_PROD);
+console.log(import.meta.env.VITE_IN_DEV);
+console.log(import.meta.env.VITE_WA);
 const GITHUB_REPO = "vite-react-test/";
 const router = createBrowserRouter([
   {
